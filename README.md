@@ -1,4 +1,4 @@
-# Monica OGCServiceCatralogue
+# Monica OGCServiceCatalogue
 <!-- Short description of the project. -->
 
 OGCServiceCatralogue manages the OGC based Service Catalogue
