@@ -1,7 +1,7 @@
 # Monica OGCServiceCatalogue
 <!-- Short description of the project. -->
 
-OGCServiceCatralogue manages the OGC based Service Catalogue
+OGCServiceCatalogue manages the OGC based Service Catalogue
 
 <!-- A teaser figure may be added here. It is best to keep the figure small (<500KB) and in the same repo -->
 
