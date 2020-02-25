@@ -1,0 +1,150 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "0.1.0",
+    "title" : "Edge Connection Manager"
+  },
+  "host" : "goeasy.cloudapp.net",
+  "basePath" : "/",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/SearchOGCDataStreamId" : {
+      "post" : {
+        "tags" : [ "OGCDataStream" ],
+        "description" : "Get the associated OGCDataStream Using an  external ID and metadata",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "search",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SearchOgcDataStreamInfo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/OgcDataStreamInfo"
+            }
+          },
+          "default" : {
+            "description" : "Error",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/GetOGCDataStreamInfo/{DataStreamId}" : {
+      "get" : {
+        "tags" : [ "OGCDataStream" ],
+        "description" : "Get OGC Data Stream Info from GOST using Data Stream ID",
+        "parameters" : [ {
+          "name" : "DataStreamId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/OgcDataStreamInfo"
+            }
+          },
+          "default" : {
+            "description" : "Error",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/swagger" : {
+      "x-swagger-pipe" : "swagger_raw"
+    }
+  },
+  "definitions" : {
+    "OgcDataStreamInfo" : {
+      "type" : "object",
+      "properties" : {
+        "DataStremId" : {
+          "type" : "integer",
+          "description" : "The GOST Datastream ID"
+        },
+        "MqttTopic" : {
+          "type" : "string",
+          "description" : "Heatmap Lower Left Corner"
+        },
+        "MqttServer" : {
+          "type" : "string",
+          "description" : "Adress of MQTT server"
+        },
+        "ExternalId" : {
+          "type" : "string",
+          "description" : "External Id for the data stream"
+        },
+        "Metadata" : {
+          "type" : "string",
+          "description" : "External metadata for the datastream"
+        }
+      },
+      "example" : {
+        "ExternalId" : "ExternalId",
+        "MqttTopic" : "MqttTopic",
+        "Metadata" : "Metadata",
+        "MqttServer" : "MqttServer",
+        "DataStremId" : 0
+      }
+    },
+    "SearchOgcDataStreamInfo" : {
+      "type" : "object",
+      "properties" : {
+        "ExternalId" : {
+          "type" : "string",
+          "description" : "External Id for the data stream"
+        },
+        "Metadata" : {
+          "type" : "string",
+          "description" : "External metadata for the datastream"
+        }
+      },
+      "example" : {
+        "ExternalId" : "ExternalId",
+        "Metadata" : "Metadata"
+      }
+    },
+    "GetOgcDataStreamInfoInfoListResponse" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/OgcDataStreamInfo"
+      }
+    },
+    "GeneralResponse" : {
+      "type" : "object",
+      "required" : [ "description", "success" ],
+      "properties" : {
+        "success" : {
+          "type" : "boolean",
+          "description" : "returns 1 if successful"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "a short comment"
+        }
+      }
+    },
+    "ErrorResponse" : {
+      "required" : [ "message" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

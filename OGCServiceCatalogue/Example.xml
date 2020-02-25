@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Kalle>
+    <value iot.id="4" iot.selfLink="http://localhost:8080/v1.0/Things(4)">
+      <name>Peeter Test3</name>
+      <description>BananGurka</description>
+      <Locations_x0040_iot.navigationLink>http://localhost:8080/v1.0/Things(4)/Locations</Locations_x0040_iot.navigationLink>
+      <Datastreams_x0040_iot.navigationLink>http://localhost:8080/v1.0/Things(4)/Datastreams</Datastreams_x0040_iot.navigationLink>
+      <HistoricalLocations_x0040_iot.navigationLink>http://localhost:8080/v1.0/Things(4)/HistoricalLocations</HistoricalLocations_x0040_iot.navigationLink>
+    </value>
+  </Kalle>
+</Root>
