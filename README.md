@@ -16,9 +16,12 @@ The project documentation is available on the [Wiki](https://github.com/MONICA-P
 ### Docker
 To run the latest version of foobar:
 ```bash
-docker run -p 8080:80 foobar
+docker run -p 8090:80 -e GOSTServerAddress=http://127.0.0.1:8080/v1.0/ -e GOSTPrefix= -e MQTTServerAddress=127.0.0.1:1883 monicaproject/ogcservicecatalogue
 ```
-
+### Environment Variables
+* **GOSTServerAddress** the URL for accessing the GOST server. **NB!** it must include /v1.0/ 
+* **GOSTPrefix** the prefix used for MQTT messages to be stored in GOST
+* **MQTTServerAddress** The address of the MQTT broker
 ## Development
 <!-- Developer instructions. -->
 
