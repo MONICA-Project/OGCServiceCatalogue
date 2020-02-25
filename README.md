@@ -19,6 +19,7 @@ To run the latest version of foobar:
 docker run -p 8090:80 -e GOSTServerAddress=http://127.0.0.1:8080/v1.0/ -e GOSTPrefix= -e MQTTServerAddress=127.0.0.1:1883 monicaproject/ogcservicecatalogue
 ```
 ### Environment Variables
+These variables are **compulsory**, the service will fail to start if these are not defined.
 * **GOSTServerAddress** the URL for accessing the GOST server. **NB!** it must include /v1.0/ 
 * **GOSTPrefix** the prefix used for MQTT messages to be stored in GOST
 * **MQTTServerAddress** The address of the MQTT broker
