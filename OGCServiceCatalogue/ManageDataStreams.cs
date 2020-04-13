@@ -75,8 +75,6 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
                 JsonResult = client.DownloadString(url);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 if(jsonRes.value.Count > 0)
@@ -112,8 +110,7 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+
                 JsonResult = client.UploadString(url, payload);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 retVal = jsonRes["@iot.id"];
@@ -157,8 +154,6 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
                 JsonResult = client.UploadString(url, payload);
              
             }
@@ -196,8 +191,7 @@ namespace OGCServiceCatalogue
                 string url = baseUrl + "Sensors?$filter=name eq '" + SensorType + "'";
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+
                 JsonResult = client.DownloadString(url);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 if (jsonRes.value.Count > 0)
@@ -235,8 +229,7 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+       
                 JsonResult = client.UploadString(url, payload);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 retVal = jsonRes["@iot.id"];
@@ -281,8 +274,7 @@ namespace OGCServiceCatalogue
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
 
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+              
                 JsonResult = client.DownloadString(url);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 if (jsonRes.value.Count > 0)
@@ -316,8 +308,7 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+             
 
                 JsonResult = client.UploadString(url, payload);
 
@@ -368,8 +359,7 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+                
                 JsonResult = client.DownloadString(url);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 if (jsonRes.value.Count > 0)
@@ -426,8 +416,7 @@ namespace OGCServiceCatalogue
                 client.Encoding = System.Text.Encoding.UTF8;
                 client.Headers["Accept"] = "application/json";
                 client.Headers["Content-Type"] = "application/json";
-                NetworkCredential myCreds = new NetworkCredential("pkool", "semester2012kreta");
-                client.Credentials = myCreds;
+              
                 JsonResult = client.UploadString(url, payload);
                 dynamic jsonRes = JValue.Parse(JsonResult);
                 retVal = jsonRes["@iot.id"];
